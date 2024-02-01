@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.thelessonsapp.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_addLessonFragment"
+            app:destination="@id/addLessonFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_editLessonFragment"
+            app:destination="@id/editLessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addLessonFragment"
+        android:name="com.example.thelessonsapp.fragments.AddLessonFragment"
+        android:label="AddLessonFragment" >
+        <action
+            android:id="@+id/action_addLessonFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editLessonFragment"
+        android:name="com.example.thelessonsapp.fragments.EditLessonFragment"
+        android:label="EditLessonFragment" >
+        <action
+            android:id="@+id/action_editLessonFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+        <argument
+            android:name="lesson"
+            app:argType="com.example.thelessonsapp.model.Lesson"
+            app:nullable="true"/>
+    </fragment>
+</navigation>
